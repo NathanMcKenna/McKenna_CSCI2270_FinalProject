@@ -1,2 +1,0 @@
-# McKenna_CSCI2270_FinalProject
-Tester
