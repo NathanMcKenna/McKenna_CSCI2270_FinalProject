@@ -1,4 +1,3 @@
 Nathan,2500
 Sarah,3000
 Doba,1500
-Sam,1500

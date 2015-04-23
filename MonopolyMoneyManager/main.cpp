@@ -18,9 +18,12 @@ int main()
 	cout<<"======================"<<endl;
 	cout<<"Monopoly Money Manager"<<endl;
 	cout<<"======================\n"<<endl;
+	//Initialize instance of class
 	account ac;
+	//Calls class function to read in data from accounts.txt file
     ac.fileReader();
 
+    //Loop continually until the user selects quit
     while(choice != '8')
 	{
         //Menu of different banking options
@@ -36,6 +39,7 @@ int main()
 		cout<<"Select Your Option (1-8) \n";
 		cin>>choice;
 
+        //Conditionals for the different menu choices
 		if(choice == 1){
             ac.addNewAccount();
 		}
@@ -64,6 +68,7 @@ int main()
 		cin.ignore();
 		cin.get();
     }
+    //Calls class function to write account vector to the text file
     ac.fileWriter();
 
 	return 0;

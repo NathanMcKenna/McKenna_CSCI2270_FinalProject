@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1429741884 source:/home/user/Desktop/MonopolyMoneyManager/main.cpp
+1429747831 source:/home/user/Desktop/MonopolyMoneyManager/main.cpp
 	"account.h"
 	<iostream>
 	<iostream>
@@ -12,7 +12,7 @@
 	<sstream>
 	<json/json.h>
 
-1429741711 /home/user/Desktop/MonopolyMoneyManager/include/account.h
+1429747830 /home/user/Desktop/MonopolyMoneyManager/include/account.h
 	<iostream>
 	<vector>
 	<iostream>
@@ -24,41 +24,6 @@
 	<json/json.h>
 
 1429741819 source:/home/user/Desktop/MonopolyMoneyManager/src/account.cpp
-	"account.h"
-	<iostream>
-	<vector>
-	<iostream>
-	<fstream>
-	<cctype>
-	<string>
-	<iomanip>
-	<sstream>
-
-1429742169 source:/home/user/Desktop/McKenna_CSCI2270_FinalProject/MonopolyMoneyManager/main.cpp
-	"account.h"
-	<iostream>
-	<iostream>
-	<vector>
-	<iostream>
-	<fstream>
-	<cctype>
-	<string>
-	<iomanip>
-	<sstream>
-	<json/json.h>
-
-1429741711 /home/user/Desktop/McKenna_CSCI2270_FinalProject/MonopolyMoneyManager/include/account.h
-	<iostream>
-	<vector>
-	<iostream>
-	<fstream>
-	<cctype>
-	<string>
-	<iomanip>
-	<sstream>
-	<json/json.h>
-
-1429741819 source:/home/user/Desktop/McKenna_CSCI2270_FinalProject/MonopolyMoneyManager/src/account.cpp
 	"account.h"
 	<iostream>
 	<vector>
