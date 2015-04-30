@@ -15,6 +15,7 @@ using namespace std;
 struct AccountInfo{
     std::string AccountName;
     int AccountBalance;
+    int pin;
 };
 
 class account
@@ -46,6 +47,7 @@ class account
         void fileReader();
         //Writes the account information from the vector to the accounts file
         void fileWriter();
+        void assignpin();
     protected:
     private:
 };
