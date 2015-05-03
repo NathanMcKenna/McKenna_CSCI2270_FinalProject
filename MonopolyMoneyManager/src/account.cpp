@@ -175,16 +175,23 @@ Post-Conditions: delta is added to the account that is chosen
 */
 void account::accountDeposit(){
     string name;
-    int delta;
+    int delta,alpha;
     bool found = false;
     cout<<"Enter the account name to deposit into"<<endl;
     cin>>name;
     for(int i=0; i<PlayerAccounts.size(); i++){
         if(name==PlayerAccounts[i].AccountName){
-            cout<<"Enter the amount to deposit"<<endl;
-            cin>>delta;
-            PlayerAccounts[i].AccountBalance += delta;
-            found = true;
+            cout << "Enter the 4-digit pin" << endl;
+            cin>>alpha;
+            if(alpha==PlayerAccounts[i].pin){
+                cout<<"Enter the amount to deposit"<<endl;
+                cin>>delta;
+                PlayerAccounts[i].AccountBalance += delta;
+                found = true;
+            } else {
+                cout<< "incorrect pin" << endl;
+                found = true;
+            }
         }
     }
     if(found == false){
@@ -205,12 +212,15 @@ This functions makes a withdrawl from one of the accounts
 */
 void account::accountWithdrawl(){
     string name;
-    int delta;
+    int delta,alpha;
     bool found = false;
     cout<<"Enter the account name to withdraw from"<<endl;
     cin>>name;
     for(int i=0; i<PlayerAccounts.size(); i++){
         if(name==PlayerAccounts[i].AccountName){
+            cout << "Enter the 4-digit pin" << endl;
+            cin>>alpha;
+            if(alpha==PlayerAccounts[i].pin){
             cout<<"Enter the amount to withdraw"<<endl;
             cin>>delta;
             if(delta > PlayerAccounts[i].AccountBalance){
@@ -220,6 +230,9 @@ void account::accountWithdrawl(){
                 PlayerAccounts[i].AccountBalance -= delta;
                 found = true;
             }
+        } else {
+            cout << "Wrong pin" << endl;
+        }
         }
     }
     if(found == false){
@@ -319,4 +332,23 @@ void account::printAll(){
         cout<<"Account Balance: "<<PlayerAccounts[i].AccountBalance<<endl;
     }
     cout<<"========================="<<endl;
+}
+
+void account::assignpin(){
+    string name;
+    int delta;
+    bool found = false;
+    cout<<"Enter the account name to assign a pin"<<endl;
+    cin>>name;
+    for(int i=0; i<PlayerAccounts.size(); i++){
+        if(name==PlayerAccounts[i].AccountName){
+            cout<<"Enter the 4 digit pin"<<endl;
+            cin>>delta;
+            PlayerAccounts[i].pin = delta;
+            found = true;
+        }
+    }
+    if(found == false){
+        cout<<"Account name not found"<<endl;
+    }
 }

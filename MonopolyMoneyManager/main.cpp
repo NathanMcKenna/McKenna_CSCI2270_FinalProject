@@ -36,6 +36,7 @@ int main()
 		cout<<"6). List All Account Holders and Balances\n";
 		cout<<"7). Close an Account\n";
 		cout<<"8). Quit\n";
+		cout<<"9). Assign Pin\n";
 		cout<<"Select Your Option (1-8) \n";
 		cin>>choice;
 
@@ -64,6 +65,9 @@ int main()
         if(choice == 8){
             cout<<"Goodbye!"<<endl;
             break;
+        }
+        if(choice == 9){
+            ac.assignpin();
         }
 		cin.ignore();
 		cin.get();
