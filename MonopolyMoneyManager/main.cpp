@@ -2,19 +2,20 @@
 #include <iostream>
 #include <iostream>
 #include <vector>
-#include<iostream>
-#include<fstream>
-#include<cctype>
+#include <iostream>
+#include <fstream>
+#include <cctype>
 #include <string>
-#include<iomanip>
+#include <iomanip>
 #include <sstream>
+#include <stdlib.h>
 #include <json/json.h>
 using namespace std;
 
 int main()
 {
     //Initialize variables, print intro menu
-	int choice = 0;
+	string choice;
 	cout<<"======================"<<endl;
 	cout<<"Monopoly Money Manager"<<endl;
 	cout<<"======================\n"<<endl;
@@ -24,7 +25,7 @@ int main()
     ac.fileReader();
 
     //Loop continually until the user selects quit
-    while(choice != '8')
+    while(true)
 	{
         //Menu of different banking options
 		cout<<"\nMain Menu\n";
@@ -37,36 +38,39 @@ int main()
 		cout<<"7). Close an Account\n";
 		cout<<"8). Quit\n";
 		cout<<"Select Your Option (1-8) \n";
-		cin>>choice;
+		getline(cin, choice);
 
         //Conditionals for the different menu choices
-		if(choice == 1){
+		if(atoi(choice.c_str()) == 1){
             ac.addNewAccount();
 		}
-        if(choice == 2){
+        else if(atoi(choice.c_str()) == 2){
             ac.accountDeposit();
         }
-		if(choice == 3){
+        else if(atoi(choice.c_str()) == 3){
             ac.accountWithdrawl();
 		}
-		if(choice == 4){
+		else if(atoi(choice.c_str()) == 4){
             ac.accountTransfer();
 		}
-		if(choice == 5){
+		else if(atoi(choice.c_str()) == 5){
             ac.accountBalance();
 		}
-		if(choice == 6){
+		else if(atoi(choice.c_str()) == 6){
             ac.printAll();
 		}
-		if(choice == 7){
+		else if(atoi(choice.c_str()) == 7){
             ac.deleteAccount();
         }
-        if(choice == 8){
+        else if(atoi(choice.c_str()) == 8){
             cout<<"Goodbye!"<<endl;
             break;
         }
-		cin.ignore();
-		cin.get();
+        else{
+            cout<<"Invalid input"<<endl;
+        }
+		//cin.ignore();
+		//cin.get();
     }
     //Calls class function to write account vector to the text file
     ac.fileWriter();
